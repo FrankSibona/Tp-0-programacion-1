@@ -52,7 +52,40 @@ public class App {
         for(int i=0; i<6 ; i++){
             System.out.println("Nombre:" + listaEstudiantes[i].getNombre() + " Promedio: " + listaEstudiantes[i].getPromedio());
         }
-      
+
+        Materia materiaUno;
+        Materia materiaDos;
+        Materia materiaTres;
+
+        materiaUno = new Materia();
+        materiaDos = new Materia();
+        materiaTres = new Materia();
+
+        
+        
+        Materia[] listaMaterias = new Materia[3];
+        
+        materiaUno.setNombre("Algebra");
+        materiaUno.setCodigo(100);
+        materiaUno.setCreditos(50);
+        materiaUno.setCalificacion(8);
+
+        materiaDos.setNombre("Programacion");
+        materiaDos.setCodigo(101);
+        materiaDos.setCreditos(50);
+        materiaDos.setCalificacion(9.5f);
+        
+        materiaTres.setNombre("Base de datos");
+        materiaTres.setCodigo(102);
+        materiaTres.setCreditos(50);
+        materiaTres.setCalificacion(7.5f);
+
+        
+        
+
+
+
+        
 
     }
 }
