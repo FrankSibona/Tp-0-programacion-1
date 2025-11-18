@@ -62,5 +62,8 @@ public Carrera (String nombre, int codigoCarrera){
         return null;
         
     }
+    public String toString(){
+        return "Carrera: " + nombre + ", Codigo de Carrera: " + codigoCarrera + ", Numero de Estudiantes: " + estudiantes.size();
+    }
 
 }

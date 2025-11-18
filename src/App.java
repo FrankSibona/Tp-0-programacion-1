@@ -36,9 +36,7 @@ public class App {
         estudianteSeis.setCarrera("Programacion");
         estudianteSeis.setPromedio(8.5F);
 
-        estudianteUno = new Estudiante("Franco", "Sibona", 24, "Programacion", 9.98F);
-        estudianteDos = new Estudiante("Emilio", "Carballo", 24, "Programacion", 10);
-        estudianteTres = new Estudiante("Pablin", "Sanabria", 30, "Ing Sistemas", 8.60F);
+
 
         listaEstudiantes = new Estudiante[6];
         listaEstudiantes[0] = estudianteUno;

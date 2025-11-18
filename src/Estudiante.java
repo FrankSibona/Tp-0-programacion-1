@@ -1,10 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Estudiante{
-    private String nombre;
-    private String apellido;
-    private int edad;
+public class Estudiante extends Persona implements MiembroUniversidad {
+    
     private String carrera;
     private float promedio;
     private List <Materia> materias;
@@ -13,46 +11,16 @@ public class Estudiante{
         this.materias = new ArrayList<>();
 
     }
-    public Estudiante (String nombre, String apellido, int edad, String carrera, float promedio, List<Materia> materias) {
-        this.nombre=nombre;
-        this.apellido=apellido;
-        this.edad=edad;
+    public Estudiante (String nombre, String apellido, int edad,String documento, String carrera, float promedio, List<Materia> materias) {
+        super(nombre, apellido,edad,documento);
         this.carrera=carrera;
         this.promedio=promedio;
         this.materias=materias; 
         
     }
 
-    public Estudiante (String nombre, String apellido, int edad, String carrera, float promedio) {
-        this.nombre=nombre;
-        this.apellido=apellido;
-        this.edad=edad;
-        this.carrera=carrera;
-        this.promedio=promedio;
-        this.materias= new ArrayList<>();
-
-    }
     
-    public String getNombre(){
-        return this.nombre;
-    }
-    public void setNombre(String nombre){
-            this.nombre= nombre;
-   
-    }
-    public String getApellido(){
-        return this.apellido;
-    }
-    public void setApellido(String apellido){
-        this.apellido= apellido;
-    }
 
-    public int getEdad(){
-        return this.edad;
-    }
-    public void setEdad(int edad){
-        this.edad=edad;
-    }
 
     public String getCarrera(){
         return this.carrera;
@@ -85,4 +53,34 @@ public class Estudiante{
     public void agregarMateria (Materia materias){
         this.materias.add(materias);
     }
+
+
+    public String toString(){
+        return "Estudiante: " + getNombre() + " " + getApellido() + ", Edad: " + getEdad() + ", Documento: " + getDocumento() + ", Carrera: " + carrera + ", Promedio: " + promedio;
+    }
+
+   @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Estudiante estudiante = (Estudiante) obj;
+        return getDocumento().equals(estudiante.getDocumento());
+    }
+
+    @Override
+    public int hashCode() {
+        return getDocumento().hashCode();
+    }
+    @Override
+    public String obtenerRol() {
+        return "Estudiante";
+    }
+    @Override
+    public String obtenerInformacionCompleta() {
+        return "Rol:" + obtenerRol() + ", Nombre: " + getNombre() + " " + getApellido() + ", Edad: " + getEdad() + ", Documento: " + getDocumento() + ", Carrera: " + getCarrera()+ ", Promedio: " + getPromedio();
+    }
+
+    
 }
+
+

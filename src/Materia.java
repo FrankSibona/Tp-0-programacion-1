@@ -4,17 +4,19 @@ public class Materia {
     private int codigo;
     private int creditos;
     private float calificacion;
+    private Profesor profesor;
     
     
     public Materia(){
 
     }
 
-    public Materia(String nombre, int codigo, int creditos, float calificacion){
+    public Materia(String nombre, int codigo, int creditos, float calificacion, Profesor profesor){
         this.nombre=nombre;
         this.codigo=codigo;
         this.creditos=creditos;
         this.calificacion=calificacion;
+        this.profesor=profesor;
     }
 
 
@@ -48,7 +50,17 @@ public class Materia {
     public void setCalificacion(float calificacion){
         this.calificacion=calificacion;
     }
+    public Profesor getProfesor(){
+        return profesor;
+    }
+    public void setProfesor (Profesor profesor){
+        this.profesor=profesor;
+    }
 
+    public String toString(){
+        return "Materia: " +nombre + ", Codigo: " + codigo + ", Creditos: " + creditos + ", Calificacion: " + calificacion + ", Profesor: " + profesor.getNombre() + " " + profesor.getApellido();  
+    }
+    
     
     
 }
