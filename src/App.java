@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
@@ -9,7 +11,15 @@ public class App {
         Estudiante estudianteCuatro;
         Estudiante estudianteCinco;
         Estudiante estudianteSeis;
-        Estudiante[] listaEstudiantes = new Estudiante[6];
+        //Estudiante[] listaEstudiantes = new Estudiante[6];//
+
+        Profesor profesorUno;
+        Profesor profesorDos;
+        List<Profesor> listaProfesores = new ArrayList<>();
+
+        Personal personalUno;
+        Personal personalDos;
+
 
         estudianteUno = new Estudiante();
         estudianteDos = new Estudiante();
@@ -23,28 +33,31 @@ public class App {
         estudianteCuatro.setEdad(24);
         estudianteCuatro.setCarrera("Programacion");
         estudianteCuatro.setPromedio(8.5F);
+        estudianteCuatro.setDocumento("12345678");
 
         estudianteCinco.setNombre("Bruno");
         estudianteCinco.setApellido("Alba");
         estudianteCinco.setEdad(20);
         estudianteCinco.setCarrera("Programacion");
         estudianteCinco.setPromedio(8.5F);
+        estudianteCinco.setDocumento("87654321");
 
         estudianteSeis.setNombre("Lauti");
         estudianteSeis.setApellido("Kesler");
         estudianteSeis.setEdad(22);
         estudianteSeis.setCarrera("Programacion");
         estudianteSeis.setPromedio(8.5F);
+        estudianteSeis.setDocumento("11223344");
 
 
 
-        listaEstudiantes = new Estudiante[6];
+        /*listaEstudiantes = new Estudiante[6];
         listaEstudiantes[0] = estudianteUno;
         listaEstudiantes[1] = estudianteDos;
         listaEstudiantes[2] = estudianteTres;
         listaEstudiantes[3] = estudianteCuatro;
         listaEstudiantes[4] = estudianteCinco;
-        listaEstudiantes[5] = estudianteSeis;
+        listaEstudiantes[5] = estudianteSeis; */
 
         Materia materiaUno;
         Materia materiaDos;
@@ -103,7 +116,64 @@ public class App {
         carreraTres.setNombre("Diseño y comunicacion");
         carreraTres.setCodigoCarrera(4);
 
-        for (int i = 0; i < 6; i++) {
+
+        profesorUno = new Profesor();
+        profesorDos = new Profesor();
+
+        profesorUno.setNombre("Walter");
+        profesorUno.setApellido("Dominguez");
+        profesorUno.setEdad(45);
+        profesorUno.setEspecialidad("Programacion");
+        profesorUno.setAñosExperiencia(20);
+        profesorUno.setDocumento("9855355");
+
+        profesorDos.setNombre("Carlos");
+        profesorDos.setApellido("Gonzalez");
+        profesorDos.setEdad(50);
+        profesorDos.setEspecialidad("Base de datos");
+        profesorDos.setAñosExperiencia(25);
+        profesorDos.setDocumento("55443322");
+
+        listaProfesores.add(profesorUno);
+        listaProfesores.add(profesorDos);
+        
+        personalUno = new Personal();
+        personalDos = new Personal();
+
+        personalUno.setNombre("Ana");
+        personalUno.setApellido("Lopez");
+        personalUno.setEdad(30);
+        personalUno.setDepartamento("Administracion");
+        personalUno.setPuesto("Secretaria");
+        personalUno.setDocumento("66778899");
+
+        personalDos.setNombre("Jorge");
+        personalDos.setApellido("Martinez");
+        personalDos.setEdad(40);
+        personalDos.setDepartamento("Recursos Humanos");
+        personalDos.setPuesto("Administrador");
+        personalDos.setDocumento("99887766");
+
+
+
+        Universidad universidad = new Universidad("Unvime", "Garcia Lorca 901");
+        
+        universidad.agregarMiembro(estudianteUno);
+        universidad.agregarMiembro(estudianteDos);
+        universidad.agregarMiembro(estudianteTres);
+        universidad.agregarMiembro(estudianteCuatro);
+        universidad.agregarMiembro(estudianteCinco);
+        universidad.agregarMiembro(estudianteSeis);
+        universidad.agregarMiembro(profesorUno);
+        universidad.agregarMiembro(profesorDos);
+        universidad.agregarMiembro(personalUno);
+        universidad.agregarMiembro(personalDos);
+
+        universidad.listarTodosLosMiembros();
+
+        universidad.buscarPorRol("Profesor");
+
+         /*for (int i = 0; i < 6; i++) {
             System.out.println(
                     "Nombre:" + listaEstudiantes[i].getNombre() + " Promedio: " + listaEstudiantes[i].getPromedio());
             System.out.println("Materias: ");
@@ -145,7 +215,9 @@ public class App {
         } else {
             System.out.println("El estudiante no fue encontrado.");
             // no lo encontré y le cuento al usuario
-        }
-    }
+        } */
+    } 
+    
 
+        
 }

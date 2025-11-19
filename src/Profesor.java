@@ -1,13 +1,19 @@
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Profesor extends Persona implements MiembroUniversidad {
     private String especialidad;
     private int añosExperiencia;
     private List <String> materiasAsignadas;
 
+    public Profesor(){
+        this.materiasAsignadas= new ArrayList<>();
+    }
     public Profesor(String nombre, String apellido, int edad, String documento, String especialidad, int añosExperiencia ){
         super(nombre, apellido, edad, documento);
+        this.especialidad=especialidad;
+        this.añosExperiencia=añosExperiencia;
         this.materiasAsignadas= new ArrayList<>();
     }
 

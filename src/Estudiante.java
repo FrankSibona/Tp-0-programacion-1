@@ -80,6 +80,25 @@ public class Estudiante extends Persona implements MiembroUniversidad {
         return "Rol:" + obtenerRol() + ", Nombre: " + getNombre() + " " + getApellido() + ", Edad: " + getEdad() + ", Documento: " + getDocumento() + ", Carrera: " + getCarrera()+ ", Promedio: " + getPromedio();
     }
 
+    public static double calcularPromedioRecursivo(Materia[] materias, int indice){
+        if(indice == materias.length){
+            return 0;
+        }
+        return materias[indice].getCalificacion() + calcularPromedioRecursivo(materias, indice + 1);
+    }
+    //El metodo recursivo es menos eficiente debido a la sobrecarga de llamadas recursivas y el uso adicional de memoria en la pila de llamadas.
+    //Sin embargo, puede ser mas facil de entender en problemas que tienen una naturaleza recursiva.
+    
+    public double calcularPromedioIterativo(Materia[] materias){
+        double suma = 0;
+        for(int i = 0; i < materias.length; i++){
+            suma += materias[i].getCalificacion();
+        }
+        return suma / materias.length;
+    }
+    //El metodod Iterativo es mas eficiente ya que utiliza menos espacio en memoria y es mas rapido al no tener la sobrecarga de llamadas recursivas.
+    //Mas simple de entender para casos sencillos como este.
+
     
 }
 
